@@ -1,31 +1,37 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
 
-  get 'reviews/create'
+  resources :restaurants, only: [ :new, :create, :index, :show ]do
+    resources :reviews, only: [ :new, :create ]
+  end
 
-  get 'reviews/new'
 
-  get 'reviews/edit'
+  # get 'reviews/index'
 
-  get 'reviews/show'
+  # get 'reviews/create'
 
-  get 'reviews/update'
+  # get 'reviews/new'
 
-  get 'reviews/destroy'
+  # get 'reviews/edit'
 
-  get 'restaurants/index'
+  # get 'reviews/show'
 
-  get 'restaurants/create'
+  # get 'reviews/update'
 
-  get 'restaurants/new'
+  # get 'reviews/destroy'
 
-  get 'restaurants/edit'
+  # get 'restaurants/index'
 
-  get 'restaurants/show'
+  # get 'restaurants/create'
 
-  get 'restaurants/update'
+  # get 'restaurants/new'
 
-  get 'restaurants/destroy'
+  # get 'restaurants/edit'
+
+  # get 'restaurants/show'
+
+  # get 'restaurants/update'
+
+  # get 'restaurants/destroy'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
